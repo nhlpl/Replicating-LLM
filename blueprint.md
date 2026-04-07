@@ -174,11 +174,11 @@ graph TD
     Agent2 -->|response| Consensus
     Consensus -->|final answer| User
     User -->|feedback| DHT[Distributed Hash Table]
-    DHT -->|store (q, r, fitness)| Agent1
-    DHT -->|store| Agent2
-    Agent1 -->|counter++| Replicate?{counter >= R?}
-    Agent2 -->|counter++| Replicate?
-    Replicate? -- Yes --> Spawn[Create child with mutation]
+    DHT -->|store q r fitness| Agent1
+    DHT -->|store q r fitness| Agent2
+    Agent1 -->|counter++| Replicate{counter >= R?}
+    Agent2 -->|counter++| Replicate
+    Replicate -- Yes --> Spawn[Create child with mutation]
     Spawn --> DHT
 ```
 
